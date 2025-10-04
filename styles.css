@@ -220,17 +220,109 @@ footer .credit {
     width: 100%; 
 }
 
+/* --- ESTILOS DO GRUPO DE OFERTAS (CANTO DIREITO) --- */
 
-/* Ajustes para telas muito pequenas */
+.group-offers-block {
+    display: flex; /* Habilita o flexbox para alinhar texto e link */
+    flex-direction: column;
+    align-items: center;
+    width: 150px; /* Garante que o bloco tenha a mesma largura do social-block */
+    text-align: center;
+}
+
+.group-text {
+    font-weight: bold;
+    font-size: 0.9em;
+    margin: 0 0 5px 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+}
+
+/* Estilo do Botão (Celular) */
+.group-link {
+    display: none; /* Começa escondido, só aparece no celular */
+    background-color: #FFD700; /* Dourado/Amarelo de destaque */
+    color: var(--color-dark);
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.group-link i {
+    margin-right: 5px;
+}
+
+.group-link:hover {
+    background-color: #e6c200;
+}
+
+/* Estilo da Imagem QR Code (Desktop) */
+.qr-code {
+    width: 60px; /* Define um tamanho pequeno para o QR Code */
+    height: 60px;
+    border: 2px solid white; /* Borda para destaque */
+    border-radius: 5px;
+    display: block; /* Começa visível no desktop */
+}
+
+/* --- AJUSTES DE RESPONSIVIDADE (MEDIA QUERIES) --- */
+
 @media (max-width: 600px) {
-    .footer-content {
-        flex-direction: column;
+    body {
+        background-size: cover;
     }
-    .social-block, .whatsapp-block {
+    .qr-code {
+    display: none;
+    }
+
+    /* Faz o conteúdo do footer ficar em coluna e centralizado */
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px; /* espaço entre os blocos */
+    }
+
+    .social-block,
+    .whatsapp-block,
+    .group-offers-block {
         width: 100%;
         text-align: center;
     }
-    .empty-space {
-        display: none;
+
+    /* Ajusta os links sociais para ficarem lado a lado centralizados */
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
     }
+
+    /* Centraliza o texto de entrega */
+    .delivery-info {
+        text-align: center;
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+    .group-link {
+    display: inline-block;
+    background-color: #25d366;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50px;   /* deixa arredondado */
+    font-weight: bold;
+    font-size: 1.1em;
+    margin: 10px auto;     /* centraliza */
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+/* efeito hover */
+.group-link:hover {
+    background-color: #1ebe5b;
+}
 }
