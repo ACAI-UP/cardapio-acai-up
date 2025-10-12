@@ -268,6 +268,33 @@ footer .credit {
     display: block; /* Começa visível no desktop */
 }
 
+.menu-item .item-old-price {
+    /* Esta propriedade é que 'risca' o texto */
+    text-decoration: line-through;
+    
+    /* Outras sugestões para deixar claro que é o preço antigo: */
+    color: #999; /* Uma cor mais clara, como cinza */
+    font-size: 0.9em; /* Um tamanho um pouco menor */
+    margin-right: 10px; /* Espaço entre o preço riscado e o desconto */
+}
+
+.menu-item .item-discount {
+    /* Estilo para o selo de desconto (opcional) */
+    background-color: red;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.menu-item .item-price {
+    /* Estilo para o novo preço para dar destaque */
+    color: green; /* Ou outra cor de destaque */
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
 /* --- AJUSTES DE RESPONSIVIDADE (MEDIA QUERIES) --- */
 
 @media (max-width: 600px) {
@@ -326,3 +353,4 @@ footer .credit {
     background-color: #1ebe5b;
 }
 }
+
