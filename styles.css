@@ -269,30 +269,30 @@ footer .credit {
 }
 
 .menu-item .item-old-price {
-    /* Esta propriedade é que 'risca' o texto */
-    text-decoration: line-through;
-    
-    /* Outras sugestões para deixar claro que é o preço antigo: */
-    color: #999; /* Uma cor mais clara, como cinza */
-    font-size: 0.9em; /* Um tamanho um pouco menor */
-    margin-right: 10px; /* Espaço entre o preço riscado e o desconto */
-}
-
-.menu-item .item-discount {
-    /* Estilo para o selo de desconto (opcional) */
-    background-color: red;
-    color: white;
-    padding: 2px 5px;
-    border-radius: 3px;
-    font-weight: bold;
+    /* Mantém as propriedades de posição */
+    color: #8A2BE2;
+    font-size: 1em;
     margin-right: 10px;
+    position: relative;
+    display: inline-block;
 }
 
-.menu-item .item-price {
-    /* Estilo para o novo preço para dar destaque */
-    color: green; /* Ou outra cor de destaque */
-    font-weight: bold;
-    font-size: 1.1em;
+/* NOVO CSS para a linha dupla sutil */
+.item-old-price::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    
+    /* Esta linha desenha o risco. O truque é usar 1px para a linha superior */
+    border-top: 1px solid #1d1d1d; 
+    
+    /* O box-shadow desenha a linha inferior. Usamos 3px de distância para dar mais espaço */
+    box-shadow: 0 3px 0 0 #1d1d1d; 
+    
+    /* Posicionamos o centro das linhas um pouco mais para cima no texto (40%) */
+    top: 40%; 
+    transform: translateY(-50%); 
 }
 
 /* --- AJUSTES DE RESPONSIVIDADE (MEDIA QUERIES) --- */
@@ -353,4 +353,3 @@ footer .credit {
     background-color: #1ebe5b;
 }
 }
-
